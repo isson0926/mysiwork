@@ -365,8 +365,8 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
                 "nnoremap <C-]> :execute "vertical rightb ptag " . expand("<cword>")<CR>
                 "nnoremap <C-]> :tabnew %<CR>g<C-]>
 
-                nnoremap    <C-h>       gT
-                nnoremap    <C-l>       gt
+                nnoremap    <s-h>       gT
+                nnoremap    <s-l>       gt
 
                 " transpose words
                 "vmap              <Leader>tw         :TransposeWords<CR>
