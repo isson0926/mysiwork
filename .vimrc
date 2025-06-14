@@ -32,10 +32,10 @@ set nocompatible
     "set shell=powershell
     set autoindent
     set tabstop=4
-    set expandtab
-    "set noexpandtab
+    "set expandtab
+    set noexpandtab
     set shiftwidth=4
-    set softtabstop=4
+    set softtabstop=0
     set mousehide
     set ve=all
     set nowrapscan
