@@ -132,7 +132,7 @@ set tags=.\tags;tags
     syntax enable
 "ui
     "colorscheme torte
-    "colorscheme koehler
+    colorscheme koehler
     "colorscheme cyberpunk
     "colorscheme neuromancer
     "colorscheme darkblue
@@ -280,7 +280,7 @@ set guioptions+=a
     "highlight Folded guibg=white guifg=blue
     "highlight Folded guibg=white guifg=black
     "highlight FoldColumn guibg=darkgrey guifg=white
-    "highlight Folded guibg=#121420 guifg=orange
+    highlight Folded guibg=blue guifg=orange
 
 "taglist
     let g:Tlist_Show_One_File=1
@@ -429,6 +429,9 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
                 nnoremap <c-_> :call DecreateWinHeight()<cr>
 
                 nnoremap <c-0> :call VimGrep()<cr>
+
+                nnoremap <c-l> <c-w>100l
+
 
                 " ev for edit vimrc
                 nnoremap <f1> :e $MYVIMRC<cr>
