@@ -129,10 +129,10 @@ set tags=.\tags;tags
 "filetype 
     filetype plugin indent on
     filetype on 
-    syntax enable
+	syntax enable
 "ui
     "colorscheme torte
-    colorscheme koehler
+    "colorscheme koehler
     "colorscheme cyberpunk
     "colorscheme neuromancer
     "colorscheme darkblue
@@ -280,7 +280,8 @@ set guioptions+=a
     "highlight Folded guibg=white guifg=blue
     "highlight Folded guibg=white guifg=black
     "highlight FoldColumn guibg=darkgrey guifg=white
-    highlight Folded guibg=blue guifg=orange
+    "highlight Folded guibg=blue guifg=orange
+    highlight Folded guibg=blue guifg=white
 
 "taglist
     let g:Tlist_Show_One_File=1
@@ -424,9 +425,6 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
                 "cnoreabbrev w call BuildAndRunUnitTest()
                 "cnoreabbrev r call BuildAndRun()
-
-                nnoremap <c-=> :call IncreaseWinHeight()<cr>
-                nnoremap <c-_> :call DecreateWinHeight()<cr>
 
                 nnoremap <c-0> :call VimGrep()<cr>
 
