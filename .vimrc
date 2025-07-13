@@ -86,6 +86,7 @@ set nocompatible
     Plug 'thinca/vim-fontzoom'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+	Plug 'ctrlpvim/ctrlp.vim'
 
     call plug#end()
 
@@ -345,6 +346,11 @@ set tags=.\tags;tags
 				\'s:snippet',
 				\]
 				\}
+
+"ctrl-p
+	" document
+	" https://ctrlpvim.github.io/ctrlp.vim/#installation
+	let g:ctrlp_map = '<c-p>'
 
 
 au BufRead,BufNewFile *.gd set filetype=gdscript
