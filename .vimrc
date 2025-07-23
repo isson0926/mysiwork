@@ -16,7 +16,7 @@ set nocompatible
     let mapleader=','
 
 "encoding
-    set fencs=utf-8
+    set fileencodings=utf-8,euc-kr,cp949,ucs-bom
     set enc=utf-8
 "    set bomb
 
