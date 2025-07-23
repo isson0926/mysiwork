@@ -32,8 +32,8 @@ set nocompatible
     "set shell=powershell
     set autoindent
     set tabstop=4
-    "set expandtab
-    set noexpandtab
+    set expandtab
+    "set noexpandtab
     set shiftwidth=4
     set softtabstop=0
     set mousehide
@@ -196,15 +196,37 @@ function! VimGrep()
     call feedkeys("\<Left>")
 endfunction
 
+let g:saved_winid = -1
+
+function! SaveWindow()
+    "echom 'SaveWindow()'
+    let g:saved_winid = win_getid()
+endfunction
+
+function! RestoreWindow()
+    "echom 'RestoreWindow() step-1'
+    if g:saved_winid != -1 
+        call win_gotoid(g:saved_winid)
+        "echom 'RestoreWindow() step-2'
+    endif
+endfunction
+
+function! GoToTerminalWindow()
+  for win in range(1, winnr('$'))
+    if getbufvar(winbufnr(win), '&buftype') ==# 'terminal'
+      execute win . 'wincmd w'
+      return 1
+    endif
+  endfor
+  return 0
+endfunction
+
 function! Build()
 	let l:current_filetype = &filetype
 	execute ("w")
-	"echom "Build() called"
 	if l:current_filetype == "gdscript" || l:current_filetype == "cs" 
-		"echom "normal! \<c-w>100j"
-		execute("normal! \<c-w>100j")
-		if &buftype ==# "terminal"
-			call feedkeys("build.bat\<cr>")
+        if GoToTerminalWindow()
+            call feedkeys("build.bat\<CR>", 'n')
 			call feedkeys("\<c-w>p")
 		endif
 	endif
@@ -214,9 +236,8 @@ function! BuildAndRun()
 	let l:current_filetype = &filetype
 	execute ("w")
 	if l:current_filetype == "gdscript" || l:current_filetype == "cs" 
-		execute("normal! \<c-w>100j")
-		if &buftype ==# "terminal"
-			call feedkeys("build_and_run.bat\<cr>")
+        if GoToTerminalWindow()
+            call feedkeys("build_and_run.bat\<CR>", 'n')
 			call feedkeys("\<c-w>p")
 		endif
 	endif
@@ -273,17 +294,25 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 "folding 
 
-        function! MyFoldText()
-            let nblines = v:foldend - v:foldstart + 1
-            let w = winwidth(0) - &foldcolumn - (&number ? 8 : 0)
-            let line = getline(v:foldstart + 1)
-            let comment = substitute(line, '#\|/\*\|\*/\|{{{\d\=', '', 'g')             "}}}
-            let txt = line
-            return txt
-        endfunction
+        "function! MyFoldText()
+        "    let nblines = v:foldend - v:foldstart + 1
+        "    let w = winwidth(0) - &foldcolumn - (&number ? 8 : 0)
+        "    let line = getline(v:foldstart + 1)
+        "    let comment = substitute(line, '#\|/\*\|\*/\|{{{\d\=', '', 'g')             "}}}
+        "    let txt = line
+        "    return txt
+        "endfunction
 
-        set fillchars=fold:\ 
-        set foldtext=MyFoldText()
+		function! FoldText()
+              let l:line = getline(v:foldstart)
+              let l:clean = substitute(l:line, '//.*$', '', '')        " C/C++ 스타일 주석 제거
+              let l:clean = substitute(l:clean, '#.*$', '', '')        " Python 스타일 주석 제거
+              let l:clean = substitute(l:clean, '--.*$', '', '')       " Lua/SQL 스타일 주석 제거
+              return l:clean
+		endfunction
+
+        "set fillchars=fold:\ 
+        set foldtext=FoldText()
 
 " Nerdtree
 
@@ -292,7 +321,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 "tagbar
 
-    nnoremap <silent><nowait> <F9> :call ShowTagbar()<CR>
+    nnoremap <silent><nowait> <C-F9> :call ShowTagbar()<CR>
     let g:tagbar_left = 0   " right
     "let g:tagbar_left = 1    " left
 
@@ -451,6 +480,5 @@ au BufRead,BufNewFile *.gd set filetype=gdscript
 
 				nnoremap <c-k> :call IncreaseWinHeight()<cr>
 				nnoremap <c-j> :call DecreateWinHeight()<cr>
-
 
 
