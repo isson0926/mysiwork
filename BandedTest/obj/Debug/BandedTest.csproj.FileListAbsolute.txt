@@ -1,0 +1,10 @@
+C:\mysiwork\BandedTest\bin\Debug\BandedTest.exe.config
+C:\mysiwork\BandedTest\bin\Debug\BandedTest.exe
+C:\mysiwork\BandedTest\bin\Debug\BandedTest.pdb
+C:\mysiwork\BandedTest\obj\Debug\BandedTest.csproj.AssemblyReference.cache
+C:\mysiwork\BandedTest\obj\Debug\BandedTest.Form1.resources
+C:\mysiwork\BandedTest\obj\Debug\BandedTest.Properties.Resources.resources
+C:\mysiwork\BandedTest\obj\Debug\BandedTest.csproj.GenerateResource.cache
+C:\mysiwork\BandedTest\obj\Debug\BandedTest.csproj.CoreCompileInputs.cache
+C:\mysiwork\BandedTest\obj\Debug\BandedTest.exe
+C:\mysiwork\BandedTest\obj\Debug\BandedTest.pdb
