@@ -1,0 +1,2 @@
+Align Assignments 2022
+	 C# you will need to disable: Tools->Options->Text Editor->C#->Formatting->Spacing->"Ignore spaces in declaration statements"
