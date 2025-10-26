@@ -1,0 +1,14 @@
+C:\mytest\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+C:\mytest\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\mytest\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+C:\mytest\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.AssemblyReference.cache
+C:\mytest\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+C:\mytest\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\mytest\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+C:\mysiwork\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+C:\mysiwork\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\mysiwork\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+C:\mysiwork\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.AssemblyReference.cache
+C:\mysiwork\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+C:\mysiwork\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\mysiwork\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
